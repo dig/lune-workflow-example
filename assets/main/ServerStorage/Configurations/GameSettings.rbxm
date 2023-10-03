@@ -1,0 +1,53 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">GameSettings</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">local GameSettings = {}
+
+-- Ride variables
+GameSettings.Platform = {
+	["MOVE_SPEED"] = 40
+}
+--original, 5, 10
+GameSettings.TransitionTime = 5
+GameSettings.QueueTime = 5
+
+GameSettings.PlayersPerDifficulty = {
+	Easy = 1,
+	Normal = 2,
+	Hard = 3
+}
+
+-- Hitpoints for each enemy; one blaster shot takes 35 hitpoints
+GameSettings.EnemyHealthDifficulty = {
+	Easy = 60,
+	Normal = 105,
+	Hard = 140
+}
+
+-- Hitpoints platform takes until game is over
+GameSettings.PlatformHealthDifficulty = {
+	Easy = 8,
+	Normal = 6,
+	Hard = 6
+}
+
+-- Percent chance an enemy spawns at a node (max value = 1.0)
+GameSettings.EnemySpawnChance = {
+	Easy = 0.35,
+	Normal = 0.48,
+	Hard = 0.65
+}
+
+return GameSettings</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

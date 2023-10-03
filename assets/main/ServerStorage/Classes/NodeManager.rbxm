@@ -1,0 +1,65 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">NodeManager</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">local CollectionService = game:GetService("CollectionService")
+local ServerStorage = game:GetService("ServerStorage")
+
+local Waypoint = require(ServerStorage.Classes.Waypoint)
+local TrackNode = require(ServerStorage.Classes.TrackNode)
+local EnemySpawn = require(ServerStorage.Classes.EnemySpawn)
+
+local NodeManager = {}
+
+local nodes = {}
+local navNodes = {}
+
+function NodeManager:setupNodes()
+	local nodeAttachments = CollectionService:GetTagged("TrackNode")
+	for _, attachment in ipairs(nodeAttachments) do
+		if CollectionService:HasTag(attachment, "Waypoint") then
+			local waypoint = Waypoint.new(attachment)
+			self:addNode(waypoint)
+			local index = tonumber(attachment.Name)
+			navNodes[index] = waypoint
+		end
+		if CollectionService:HasTag(attachment, "Enemy Spawn") then
+			self:addNode(EnemySpawn.new(attachment))
+		end
+	end
+end
+
+function NodeManager:getNavNode(index)
+	return navNodes[index]
+end
+
+function NodeManager:getMaxNavNodes()
+	return #navNodes
+end
+
+function NodeManager:addNode(node)
+	local attachment = node:getAttachment()
+	nodes[attachment] = node
+end
+
+function NodeManager:getNode(attachment)
+	local node = nodes[attachment]
+	return node
+end
+
+function NodeManager:getAllNodes()
+	return nodes
+end
+
+return NodeManager</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

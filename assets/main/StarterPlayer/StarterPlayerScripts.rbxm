@@ -1,0 +1,46 @@
+<roblox version="4">
+  <Item class="StarterPlayerScripts" referent="0">
+    <Properties>
+      <string name="Name">StarterPlayerScripts</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+    <Item class="LocalScript" referent="1">
+      <Properties>
+        <string name="Name">BackgroundMusic</string>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <bool name="DefinesCapabilities">false</bool>
+        <bool name="Disabled">false</bool>
+        <Content name="LinkedSource">
+          <null>
+          </null>
+        </Content>
+        <token name="RunContext">0</token>
+        <string name="Source">local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SoundService = game:GetService("SoundService")
+
+local events = ReplicatedStorage:WaitForChild("Events")
+local toggleRideHUD = events:WaitForChild("ToggleRideHUD")
+local lobbyMusic = SoundService:WaitForChild("LobbyMusic")
+local rideMusic = SoundService:WaitForChild("RideMusic")
+
+local function onRideHudToggle(inRide)
+	if inRide then
+		lobbyMusic:Stop()
+		rideMusic:Play()
+	else
+		lobbyMusic:Play()
+		rideMusic:Stop()
+	end
+end
+
+lobbyMusic:Play()
+toggleRideHUD.OnClientEvent:Connect(onRideHudToggle)</string>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+      </Properties>
+    </Item>
+  </Item>
+</roblox>

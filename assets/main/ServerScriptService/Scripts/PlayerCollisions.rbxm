@@ -1,0 +1,36 @@
+<roblox version="4">
+  <Item class="Script" referent="0">
+    <Properties>
+      <string name="Name">PlayerCollisions</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="Disabled">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <token name="RunContext">0</token>
+      <string name="Source">-- Used to keep players on the cart
+
+local PhysicsService = game:GetService("PhysicsService")
+local Players = game:GetService("Players")
+
+local function charaterAdded(character)
+	local forceField = Instance.new("ForceField")
+	forceField.Visible = false
+	local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+	humanoidRootPart.CanCollide = true
+	forceField.Parent = character
+	PhysicsService:SetPartCollisionGroup(humanoidRootPart, "Players")
+end
+
+local function playerAdded(player)
+	player.CharacterAdded:Connect(charaterAdded)
+end
+
+Players.PlayerAdded:Connect(playerAdded)</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

@@ -1,0 +1,59 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">TrackNode</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">local TrackNode = {}
+TrackNode.__index = TrackNode
+
+local NODE_RESET_DELAY = 15
+
+local serverEvent = Instance.new("BindableEvent")
+local clientEvent = Instance.new("RemoteEvent")
+
+TrackNode.serverEvent = serverEvent.Event
+TrackNode.remoteEvent = clientEvent
+
+function TrackNode.new(attachment)
+	local self = setmetatable({}, TrackNode)
+		
+	self._attachment = attachment
+	self._canTrigger = true
+	
+	self.type = "TrackNode"
+	
+	return self
+end
+
+function TrackNode:canTrigger()
+	return self._canTrigger
+end
+
+function TrackNode:onTrigger()
+	if self._canTrigger then
+		self._canTrigger = false
+		serverEvent:Fire(self)
+		clientEvent:FireAllClients(self)
+		spawn(function()
+			wait(NODE_RESET_DELAY)
+			self._canTrigger = true
+		end)
+	end
+	return self._canTrigger
+end
+
+function TrackNode:getAttachment()
+	return self._attachment
+end
+
+return TrackNode</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

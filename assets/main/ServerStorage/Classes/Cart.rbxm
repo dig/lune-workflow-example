@@ -1,0 +1,120 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">Cart</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">local Cart = {}
+Cart.__index = Cart
+
+local CollectionService = game:GetService("CollectionService")
+local ServerStorage = game:GetService("ServerStorage")
+
+local NodeManager = require(ServerStorage.Classes.NodeManager)
+local TrackNode = require(ServerStorage.Classes.TrackNode)
+local RideManager = require(game.ServerStorage.ModuleScripts.RideManager)
+
+local gameEndEvent = ServerStorage.Events.GameEnd
+local hitPlatformEvent = ServerStorage.Events.HitPlatform
+
+local trackNodes = CollectionService:GetTagged("TrackNode")
+
+local TRIGGER_DISTANCE = 4
+local CART_VELOCITY = 10
+
+function Cart.new(cartModel, platformId)
+	local self = setmetatable({}, Cart)
+	
+	self._platformId = platformId
+	self._model = cartModel
+	
+	for _, object in pairs(cartModel:GetChildren()) do
+		if object:IsA("BasePart") then
+			CollectionService:AddTag(object, "Platform")
+		end
+	end
+	
+	self._primaryPart = cartModel.PrimaryPart
+	self._model.Data.OriginalPos.Value = self._primaryPart.Position
+	self._currentNavIndex = 0
+	
+	TrackNode.serverEvent:Connect(function(node)
+		if node.type == "Waypoint" then
+			self:moveToNextNode()
+		end
+	end)
+	
+	hitPlatformEvent.Event:Connect(function()
+		self:_takeDamage()
+	end)
+	
+	return self
+end
+
+function Cart:activateParticles(particleHolder)
+	for _, object in ipairs(particleHolder:GetChildren()) do
+		if object:IsA("ParticleEmitter") then
+			object.Enabled = true
+		end
+	end
+end
+
+function Cart:moveToNextNode()
+	self._currentNavIndex = self._currentNavIndex + 1
+	
+	-- End game if cart reached destination; otherwise continue moving
+	if self._currentNavIndex > NodeManager:getMaxNavNodes() then
+		self:activateParticles(self._model.ParticleWin)
+		-- Fire end game (Platform ID, Condition)
+		gameEndEvent:Fire(1, RideManager.EndCondition.ReachedEnd)
+	else
+		local navNode = NodeManager:getNavNode(self._currentNavIndex)
+		local navAttachment = navNode:getAttachment()
+		local alignPosition = self._primaryPart.AlignPosition
+		alignPosition.Attachment1 = navAttachment
+	end
+end
+
+function Cart:start()
+	self._currentNavIndex = 0
+	self:moveToNextNode()
+	self._primaryPart.Anchored = false
+	self._primaryPart.AlignPosition.MaxVelocity = CART_VELOCITY
+end
+
+function Cart:stop()
+	self._primaryPart.AlignPosition.MaxVelocity = 0
+end
+
+function Cart:_takeDamage()
+	self._model.Data.Hitpoints.Value -= 1
+	self._model.ParticleDeath.ParticleFire:Emit(100)
+	
+	if self._model.Data.Hitpoints.Value &lt;= 0 then
+		self:activateParticles(self._model.ParticleDeath)
+		gameEndEvent:Fire(self._platformId, RideManager.EndCondition.PlatformDeath)
+	end
+end
+
+function Cart:onUpdate()
+	local cartPosition = self._primaryPart.Position
+	for _, nodeAttachment in ipairs(trackNodes) do
+		local nodePosition = nodeAttachment.WorldPosition
+		local distance = (cartPosition - nodePosition).Magnitude
+		if distance &lt;= TRIGGER_DISTANCE then
+			local node = NodeManager:getNode(nodeAttachment)
+			node:onTrigger()
+		end
+	end
+end
+
+return Cart</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

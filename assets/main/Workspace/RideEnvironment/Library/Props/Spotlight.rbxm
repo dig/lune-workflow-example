@@ -1,0 +1,197 @@
+<roblox version="4">
+  <Item class="Part" referent="0">
+    <Properties>
+      <string name="Name">Spotlight</string>
+      <bool name="Anchored">true</bool>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <float name="BackParamA">-0.5</float>
+      <float name="BackParamB">0.5</float>
+      <token name="BackSurface">0</token>
+      <token name="BackSurfaceInput">0</token>
+      <float name="BottomParamA">-0.5</float>
+      <float name="BottomParamB">0.5</float>
+      <token name="BottomSurface">0</token>
+      <token name="BottomSurfaceInput">0</token>
+      <CoordinateFrame name="CFrame">
+        <X>-103.08072</X>
+        <Y>63.909775</Y>
+        <Z>-943.56946</Z>
+        <R00>-0.64181596</R00>
+        <R01>-0.29723674</R01>
+        <R02>-0.7069106</R02>
+        <R10>-0.4664718</R10>
+        <R11>0.8829919</R11>
+        <R12>0.052243363</R12>
+        <R20>0.60866773</R20>
+        <R21>0.3632845</R21>
+        <R22>-0.70537084</R22>
+      </CoordinateFrame>
+      <bool name="CanCollide">false</bool>
+      <bool name="CanQuery">true</bool>
+      <bool name="CanTouch">true</bool>
+      <bool name="CastShadow">true</bool>
+      <string name="CollisionGroup">Default</string>
+      <int name="CollisionGroupId">0</int>
+      <Color3uint8 name="Color3uint8">65535</Color3uint8>
+      <PhysicalProperties name="CustomPhysicalProperties">
+        <CustomPhysics>false</CustomPhysics>
+      </PhysicalProperties>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="EnableFluidForces">true</bool>
+      <token name="formFactorRaw">1</token>
+      <float name="FrontParamA">-0.5</float>
+      <float name="FrontParamB">0.5</float>
+      <token name="FrontSurface">0</token>
+      <token name="FrontSurfaceInput">0</token>
+      <float name="LeftParamA">-0.5</float>
+      <float name="LeftParamB">0.5</float>
+      <token name="LeftSurface">0</token>
+      <token name="LeftSurfaceInput">0</token>
+      <bool name="Locked">false</bool>
+      <bool name="Massless">false</bool>
+      <token name="Material">288</token>
+      <string name="MaterialVariantSerialized"></string>
+      <CoordinateFrame name="PivotOffset">
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+        <R00>1</R00>
+        <R01>0</R01>
+        <R02>0</R02>
+        <R10>0</R10>
+        <R11>1</R11>
+        <R12>0</R12>
+        <R20>0</R20>
+        <R21>0</R21>
+        <R22>1</R22>
+      </CoordinateFrame>
+      <float name="Reflectance">0</float>
+      <float name="RightParamA">-0.5</float>
+      <float name="RightParamB">0.5</float>
+      <token name="RightSurface">0</token>
+      <token name="RightSurfaceInput">0</token>
+      <int name="RootPriority">0</int>
+      <Vector3 name="RotVelocity">
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Vector3>
+      <token name="shape">1</token>
+      <Vector3 name="size">
+        <X>0.2856663</X>
+        <Y>0.73185575</Y>
+        <Z>0.6965019</Z>
+      </Vector3>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+      <float name="TopParamA">-0.5</float>
+      <float name="TopParamB">0.5</float>
+      <token name="TopSurface">0</token>
+      <token name="TopSurfaceInput">0</token>
+      <float name="Transparency">1</float>
+      <Vector3 name="Velocity">
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Vector3>
+    </Properties>
+    <Item class="SpotLight" referent="1">
+      <Properties>
+        <string name="Name">SpotLight</string>
+        <float name="Angle">144</float>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <float name="Brightness">1.62</float>
+        <Color3 name="Color">
+          <R>0.6784314</R>
+          <G>0.121568635</G>
+          <B>0.6117647</B>
+        </Color3>
+        <bool name="DefinesCapabilities">false</bool>
+        <bool name="Enabled">true</bool>
+        <token name="Face">3</token>
+        <float name="Range">60</float>
+        <bool name="Shadows">true</bool>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+      </Properties>
+    </Item>
+    <Item class="Attachment" referent="2">
+      <Properties>
+        <string name="Name">Attachment</string>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <CoordinateFrame name="CFrame">
+          <X>-33.484943</X>
+          <Y>0.000025115844</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0.0000004768374</R01>
+          <R02>0.000000029802365</R02>
+          <R10>-0.0000004768374</R10>
+          <R11>1</R11>
+          <R12>0.00000005960468</R12>
+          <R20>-0.000000029802337</R20>
+          <R21>-0.000000059604695</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <bool name="DefinesCapabilities">false</bool>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <bool name="Visible">false</bool>
+      </Properties>
+    </Item>
+    <Item class="Attachment" referent="3">
+      <Properties>
+        <string name="Name">Attachment</string>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <CoordinateFrame name="CFrame">
+          <X>-0.09247344</X>
+          <Y>-0.000012557922</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <bool name="DefinesCapabilities">false</bool>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <bool name="Visible">false</bool>
+      </Properties>
+    </Item>
+    <Item class="Beam" referent="4">
+      <Properties>
+        <string name="Name">light</string>
+        <Ref name="Attachment0">3</Ref>
+        <Ref name="Attachment1">2</Ref>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <float name="Brightness">1</float>
+        <ColorSequence name="Color">0 0.6784314 0.12156863 0.6117647 0 1 0.6784314 0.12156863 0.6117647 0 </ColorSequence>
+        <float name="CurveSize0">0</float>
+        <float name="CurveSize1">0</float>
+        <bool name="DefinesCapabilities">false</bool>
+        <bool name="Enabled">true</bool>
+        <bool name="FaceCamera">true</bool>
+        <float name="LightEmission">1</float>
+        <float name="LightInfluence">0</float>
+        <int name="Segments">2</int>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <Content name="Texture">
+          <url>http://www.roblox.com/asset/?id=5204648784</url>
+        </Content>
+        <float name="TextureLength">1</float>
+        <token name="TextureMode">0</token>
+        <float name="TextureSpeed">0</float>
+        <NumberSequence name="Transparency">0 0.80625 0 0.9414466 0.925 0 1 1 0 </NumberSequence>
+        <float name="Width0">1</float>
+        <float name="Width1">60</float>
+        <float name="ZOffset">0</float>
+      </Properties>
+    </Item>
+  </Item>
+</roblox>

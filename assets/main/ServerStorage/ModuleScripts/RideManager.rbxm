@@ -1,0 +1,69 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">RideManager</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">local RideManager = {}
+
+local ServerStorage =  game:GetService("ServerStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
+
+local GameSettings = require(ServerStorage.Configurations.GameSettings)
+local PlayerManager = require(ServerStorage.ModuleScripts.PlayerManager)
+
+local isGameActive = ServerScriptService:WaitForChild("Scripts"):WaitForChild("GameManager"):WaitForChild("IsGameActive")
+
+local spawnerFolder = workspace.EnemySpawners
+-- Folder where enemies are parented to upon spawning
+local enemyFolder = game.Workspace.Targets
+
+RideManager.EndCondition = {
+	ReachedEnd = "You win!",
+	PlatformDeath = "You lost!"
+}
+
+local function resetRide(platformObject)
+	-- Destroy any remaining enemies
+	for _, enemy in ipairs(enemyFolder:GetChildren()) do
+		enemy:Destroy()
+	end
+	
+	-- Deactivate all enemy spawners
+	for _, spawner in ipairs(spawnerFolder:GetChildren()) do
+		local isActive = spawner:WaitForChild("IsActive")
+		isActive.Value = false
+	end
+	
+	-- Deactivate effects on the platform 	
+	for _, object in ipairs(platformObject:GetDescendants()) do
+		if object:IsA("ParticleEmitter") then
+			object.Enabled = false
+		end
+	end
+end
+
+function RideManager:setupRide(platformObject, difficulty)
+	local hitpoints = platformObject:WaitForChild("Data"):WaitForChild("Hitpoints")
+	hitpoints.Value = GameSettings.PlatformHealthDifficulty[difficulty]
+	
+	local positionToSet = platformObject:WaitForChild("Data"):WaitForChild("OriginalPos")
+	platformObject:WaitForChild("PrimaryPart").CFrame = CFrame.new(positionToSet.Value)
+end
+
+function RideManager:endRide(platformObject)
+	isGameActive.Value = false	
+	PlayerManager.removePlayersFromGame()
+	resetRide(platformObject)
+end
+
+return RideManager</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

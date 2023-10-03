@@ -1,0 +1,35 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">Enemies</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source"><![CDATA[local Enemies = {}
+
+Enemies.EnemyType = {
+	Normal = 1
+}
+
+Enemies.EnemyData = {}
+
+Enemies.EnemyData[Enemies.EnemyType.Normal] = {
+	moveSpeed = 5
+}
+
+Enemies.HealthDifficulty = {
+	Easy = 100,
+	Normal = 125,
+	Hard = 160
+}
+
+return Enemies
+]]></string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

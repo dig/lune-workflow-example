@@ -1,0 +1,68 @@
+<roblox version="4">
+  <Item class="Script" referent="0">
+    <Properties>
+      <string name="Name">EnemySpawner</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="Disabled">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <token name="RunContext">0</token>
+      <string name="Source"><![CDATA[local ServerStorage = game:GetService("ServerStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
+
+local NodeManager = require(ServerStorage.Classes.NodeManager)
+local TrackNode = require(ServerStorage.Classes.TrackNode)
+local SpawnConfiguration = require(ServerStorage.Configurations.EnemySpawning)
+local GameSettings = require(ServerStorage.Configurations.GameSettings)
+local Enemy = require(ServerStorage.Classes.Enemy)
+
+local enemiesFolder = ServerStorage.Enemies
+local enemiesTable = enemiesFolder:GetChildren()
+local targetsFolder = game.workspace.Targets
+local difficulty = ServerScriptService.Scripts.GameManager.Difficulty
+
+local RandomGen = Random.new()
+
+local SPAWN_Y_OFFSET = 6
+local SPAWN_OFFSET = Vector3.new(0, 6, 0)
+
+local function spawnEnemy(spawnerObject)
+	if spawnerObject then
+		local spawnLocation = spawnerObject.CFrame + SPAWN_OFFSET
+		local enemyType = spawnerObject.EnemyType.Value
+		if enemyType == "Ghost" then
+			spawnLocation += Vector3.new(0, 6, 0)
+		end
+		local enemy = Enemy.new(enemyType, spawnLocation, game.Workspace.Cart, difficulty.Value)
+		enemy:start()
+	else
+		warn("Spawner object not detected in table. Check that EnemySpawning > waypoints[] includes all spawners in the EnemySpawners folder")
+	end
+end
+
+TrackNode.serverEvent:Connect(function(node)
+	setmetatable(node, TrackNode)
+	local attachment = node:getAttachment()
+	local spawnsToTrigger = SpawnConfiguration.waypoints[tonumber(attachment.Name)]
+	
+	local currentDifficulty = difficulty.Value
+	local spawnChance = GameSettings.EnemySpawnChance[currentDifficulty]
+	
+	if spawnsToTrigger then
+		for _, spawnName in pairs(spawnsToTrigger) do
+			if RandomGen:NextNumber() < spawnChance then
+				local spawner = game.Workspace.EnemySpawners:FindFirstChild(spawnName)
+				spawnEnemy(spawner)
+			end
+		end
+	end
+end)
+]]></string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

@@ -1,0 +1,36 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">EnemySpawn</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">local ServerStorage = game:GetService("ServerStorage")
+local TrackNode = require(ServerStorage.Classes.TrackNode)
+
+local EnemySpawn = {}
+EnemySpawn.__index = EnemySpawn
+setmetatable(EnemySpawn, TrackNode)
+
+function EnemySpawn.new(attachment)
+	local self = setmetatable(TrackNode.new(attachment), EnemySpawn)
+	
+	return self
+end
+
+function EnemySpawn:onTrigger()
+	if self:canTrigger() then
+		--print("ENEMY SPAWN")
+	end
+	TrackNode.onTrigger(self)
+end
+
+return EnemySpawn</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

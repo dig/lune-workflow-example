@@ -1,0 +1,48 @@
+<roblox version="4">
+  <Item class="Script" referent="0">
+    <Properties>
+      <string name="Name">CartController</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="Disabled">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <token name="RunContext">0</token>
+      <string name="Source">local ServerStorage = game:GetService("ServerStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
+
+local Waypoint = require(ServerStorage.Classes.Waypoint)
+local TrackNode = require(ServerStorage.Classes.TrackNode)
+local Cart = require(ServerStorage.Classes.Cart)
+local NodeManager = require(ServerStorage.Classes.NodeManager)
+
+local Events = ServerStorage.Events
+local GameStartEvent = Events.GameStart
+local GameOverEvent = Events.GameEnd
+
+local isGameActive = ServerScriptService.Scripts.GameManager.IsGameActive
+
+NodeManager:setupNodes()
+
+local cartModel = game.Workspace.Cart
+
+-- 1 refers to the cart ID in situations where there is more than one cart
+local cart = Cart.new(game.Workspace.Cart, 1)
+
+GameStartEvent.Event:Connect(function()
+	cart:start()
+	while wait(0.15) and isGameActive.Value do
+		cart:onUpdate()
+	end
+end)
+
+GameOverEvent.Event:Connect(function()
+	cart:stop()
+end)</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

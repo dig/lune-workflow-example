@@ -1,0 +1,120 @@
+<roblox version="4">
+  <Item class="Script" referent="0">
+    <Properties>
+      <string name="Name">GameManager</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="Disabled">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <token name="RunContext">0</token>
+      <string name="Source">local ServerStorage = game:GetService("ServerStorage")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local RideManager = require(ServerStorage.ModuleScripts.RideManager)
+local PlayerManager = require(ServerStorage.ModuleScripts.PlayerManager)
+local Timer = require(ServerStorage.Classes.Timer)
+local GameSettings = require(ServerStorage.Configurations.GameSettings)
+
+local Events = ServerStorage.Events
+local gameOverEvent = Events:WaitForChild("GameEnd")
+local gameStartEvent = Events:WaitForChild("GameStart")
+local ClientTriggerGame = ReplicatedStorage:WaitForChild("Events"):WaitForChild("ClientTriggerGame")
+local TriggerGameEvent = Events:WaitForChild("PlayerTriggerGame")
+local rideQueueUpdate = ReplicatedStorage.Events.RideQueueUpdate
+
+local startSpawn = workspace.StartSpawn
+local ridePlatform = workspace.Cart
+local isGameActive = script.IsGameActive
+local difficulty = script.Difficulty
+
+local playerQueue = {}
+local queueTimer = Timer.new()
+
+local QUEUE_TIME_DURATION = GameSettings.QueueTime
+local TRANSITION_TIME = GameSettings.TransitionTime
+
+local function onRideStartRequest(player)
+	-- If game is running, don't let players in
+	if isGameActive.Value then return end
+	
+	if not queueTimer:isRunning() then
+		queueTimer:start(QUEUE_TIME_DURATION)
+		rideQueueUpdate:FireAllClients("RIDE_STARTING")
+	end
+	
+	PlayerManager:addPlayerToGame(player)
+end
+
+local function startGame()
+	isGameActive.Value = true
+	rideQueueUpdate:FireAllClients("RIDE_STARTED")
+	local numberOfPlayers = PlayerManager:getNumberOfPlayers()
+	if numberOfPlayers &lt;= GameSettings.PlayersPerDifficulty["Easy"] then
+		difficulty.Value = "Easy"
+	elseif numberOfPlayers &lt;= GameSettings.PlayersPerDifficulty["Normal"] then
+		difficulty.Value = "Normal"
+	else
+		difficulty.Value = "Hard"
+	end
+	
+	RideManager:setupRide(game.Workspace.Cart, difficulty.Value)
+	PlayerManager:movePlayersToGame()
+	
+	gameStartEvent:Fire()
+end
+
+local function endGame(platformID, whatStatus)
+	isGameActive.Value = false
+	
+	if whatStatus == RideManager.EndCondition.ReachedEnd then
+		PlayerManager:displayEndScreen("Victory", TRANSITION_TIME)
+	elseif whatStatus == RideManager.EndCondition.PlatformDeath then
+		PlayerManager:displayEndScreen("Defeat", TRANSITION_TIME)
+	else
+		warn("invalid end game status!")
+	end
+	
+	-- Delay so it's not so sudden
+	wait(TRANSITION_TIME)
+	
+	RideManager:endRide(ridePlatform)
+end
+
+ClientTriggerGame.OnServerEvent:Connect(function(player)
+	TriggerGameEvent:Fire(player)
+end)
+
+gameOverEvent.Event:Connect(function(platformID, status)
+	endGame(platformID, status)
+end)
+
+queueTimer.finished:Connect(startGame)
+TriggerGameEvent.Event:connect(onRideStartRequest)</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+    <Item class="BoolValue" referent="1">
+      <Properties>
+        <string name="Name">IsGameActive</string>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <bool name="DefinesCapabilities">false</bool>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <bool name="Value">false</bool>
+      </Properties>
+    </Item>
+    <Item class="StringValue" referent="2">
+      <Properties>
+        <string name="Name">Difficulty</string>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <bool name="DefinesCapabilities">false</bool>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <string name="Value"></string>
+      </Properties>
+    </Item>
+  </Item>
+</roblox>

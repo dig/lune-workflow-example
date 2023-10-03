@@ -1,0 +1,69 @@
+<roblox version="4">
+  <Item class="LocalScript" referent="0">
+    <Properties>
+      <string name="Name">PrizeGuiScript</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="Disabled">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <token name="RunContext">0</token>
+      <string name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local sparklersFolder = ReplicatedStorage:WaitForChild("Sparklers")
+local sparklerPrize = sparklersFolder:WaitForChild("Sparkler")
+
+local starterGUI = script.Parent
+
+local prizeNPC = game.Workspace.Lobby:WaitForChild("PrizeNPC")
+local proximityPrize = prizeNPC:WaitForChild("ProximityPrompt")
+local playScreen = starterGUI:WaitForChild("PlayScreen")
+local prizeGUI = playScreen:WaitForChild("PrizeGUI")
+
+local player = game.Players.LocalPlayer
+local backpack = player:WaitForChild("Backpack")
+
+-- Buttons
+local sparklerButton = prizeGUI:WaitForChild("SparklerGeneric")
+local exitButton = prizeGUI:WaitForChild("ExitButton")
+
+
+local function exit()
+	prizeGUI.Visible = false
+end
+
+local function openPrizeGUI()
+	prizeGUI.Visible = true
+end
+
+local function openRedeem()
+	prizeGUI.Visible = false
+end
+
+local function awardPrize(whichPrize)
+	-- Check if backpack already has that sparkler
+	local cloneObject = sparklerPrize:Clone()
+	cloneObject.Parent = backpack
+	
+	-- MAybe equip it? 
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:FindFirstChild("Humanoid") or character:WaitForChild("Humanoid")
+
+	humanoid:EquipTool(cloneObject)
+end
+
+exitButton.MouseButton1Click:Connect(exit)
+
+sparklerButton.MouseButton1Click:Connect(function()
+	awardPrize()
+end)
+
+proximityPrize.Triggered:Connect(openPrizeGUI)
+
+]]></string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

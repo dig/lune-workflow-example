@@ -1,0 +1,46 @@
+<roblox version="4">
+  <Item class="Camera" referent="0">
+    <Properties>
+      <string name="Name">Camera</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <CoordinateFrame name="CFrame">
+        <X>48.789192</X>
+        <Y>73.47417</Y>
+        <Z>322.74554</Z>
+        <R00>-0.9895571</R00>
+        <R01>0.06408784</R01>
+        <R02>-0.12911047</R02>
+        <R10>-0.0000000037252899</R10>
+        <R11>0.89572054</R11>
+        <R12>0.44461766</R12>
+        <R20>0.14414147</R20>
+        <R21>0.43997455</R21>
+        <R22>-0.8863666</R22>
+      </CoordinateFrame>
+      <Ref name="CameraSubject">null</Ref>
+      <token name="CameraType">0</token>
+      <bool name="DefinesCapabilities">false</bool>
+      <float name="FieldOfView">70</float>
+      <token name="FieldOfViewMode">0</token>
+      <CoordinateFrame name="Focus">
+        <X>49.04741</X>
+        <Y>72.584946</Y>
+        <Z>324.51825</Z>
+        <R00>1</R00>
+        <R01>0</R01>
+        <R02>0</R02>
+        <R10>0</R10>
+        <R11>1</R11>
+        <R12>0</R12>
+        <R20>0</R20>
+        <R21>0</R21>
+        <R22>1</R22>
+      </CoordinateFrame>
+      <bool name="HeadLocked">true</bool>
+      <float name="HeadScale">1</float>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+      <bool name="VRTiltAndRollEnabled">false</bool>
+    </Properties>
+  </Item>
+</roblox>

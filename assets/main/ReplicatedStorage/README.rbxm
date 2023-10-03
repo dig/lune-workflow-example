@@ -1,0 +1,44 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">README</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">--[[
+
+
+-- Tags
+"Platform" - Used to detect the active platform so enemies know where to move
+"Enemy" - Detect enemies. Used by platforms and projectiles. 
+"CanBeHit" - affected by the projectile 
+
+-- Projectiles
+To have something hit, it needs to have a CanBeHit boolean set to true.
+It also needs an emitter part there. 
+
+-- Particle Effects
+This uses the Roblox Weapons Kit https://developer.roblox.com/en-us/articles/weapons-kit
+For the particle effects, it draws from physical parts on startup and then attaches them to a specific bullet effect on that weapon.
+See ParticleSwitcher script for more information
+
+-- Modifying the Game Track
+The path the cart follows is based off Workspace.TrackParts. Each part is a visual representation. The cart actually follows point to point
+based off numbered attachments. For instance, it will progress from attachment 1, 2, 3, etc until it reaches the final attachment. 
+
+-- Enemy Spawning
+Enemies are spawned randomly at spawning objects whenever a cart hits a certain waypoint (see Workspace.TrackParts). To modify this,
+see the script EnemySpawning.
+
+-- Difficulty Settings
+Can be found in the GameSettings script. 
+
+]]</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

@@ -1,0 +1,95 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">PlayerManager</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">local PlayerManager = {}
+
+local ServerStorage = game:GetService("ServerStorage")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local Events = ReplicatedStorage.Events
+local ToggleRideHUD = Events.ToggleRideHUD
+local ClientEndGame = Events.ClientEndGame
+local RideQueueUpdate = Events.RideQueueUpdate
+
+local blasterWeapon = ServerStorage:WaitForChild("Weapons"):WaitForChild("Blaster")
+
+-- Teleport variables
+local START_AREA = game.Workspace.StartSpawn
+local RIDE_PLATFORM = game.Workspace.Cart
+
+local activePlayers = {}
+
+local function equipTool(player, equip)
+	local character = player.Character
+	if character and character.Humanoid then
+		local humanoid = character.Humanoid
+		if equip then
+			local weaponCopy = blasterWeapon:Clone()
+			weaponCopy.Parent = player.Backpack
+			humanoid:EquipTool(weaponCopy)
+		else
+			humanoid:UnequipTools()
+			for _, item in ipairs(player.Backpack:GetChildren()) do
+				if item.Name == "Blaster" then
+					item:Destroy()
+				end
+			end
+		end
+	end
+end
+
+local function teleportPlayers(players, target, displayHUD)
+	for i, player in ipairs(players) do
+		-- Make sure the character exists and its HumanoidRootPart exists
+		if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+			-- Add an offset of 5 for each character
+			player.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0, i * 5, 0)
+			ToggleRideHUD:FireClient(player, displayHUD)
+			equipTool(player, displayHUD)
+		end
+	end
+end
+
+function PlayerManager:getNumberOfPlayers()
+	return #activePlayers
+end
+
+function PlayerManager:displayEndScreen(whatStatus, transitionTime)
+	
+	for i, player in ipairs(activePlayers) do		
+		ClientEndGame:FireClient(player, whatStatus, transitionTime)
+	end
+end
+
+function PlayerManager:addPlayerToGame(player)
+	if not table.find(activePlayers, player) then
+		table.insert(activePlayers, player)
+		RideQueueUpdate:FireClient(player, "IN_QUEUE")
+	end	
+end
+
+function PlayerManager:movePlayersToGame()
+	local target = RIDE_PLATFORM.PrimaryPart
+	teleportPlayers(activePlayers, target, true)
+end
+
+function PlayerManager:removePlayersFromGame()
+	local target = START_AREA
+	teleportPlayers(activePlayers, target, false)
+	
+	activePlayers = {}
+end
+
+return PlayerManager</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

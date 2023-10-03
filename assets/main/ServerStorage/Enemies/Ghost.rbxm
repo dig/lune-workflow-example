@@ -1,0 +1,602 @@
+<roblox version="4">
+  <Item class="Model" referent="0">
+    <Properties>
+      <string name="Name">Ghost</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <token name="LevelOfDetail">0</token>
+      <CoordinateFrame name="ModelMeshCFrame">
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+        <R00>1</R00>
+        <R01>0</R01>
+        <R02>0</R02>
+        <R10>0</R10>
+        <R11>1</R11>
+        <R12>0</R12>
+        <R20>0</R20>
+        <R21>0</R21>
+        <R22>1</R22>
+      </CoordinateFrame>
+      <SharedString name="ModelMeshData">rxNJufX5oaagQE3qNtzJSQ==</SharedString>
+      <Vector3 name="ModelMeshSize">
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Vector3>
+      <token name="ModelStreamingMode">0</token>
+      <bool name="NeedsPivotMigration">false</bool>
+      <Ref name="PrimaryPart">1</Ref>
+      <float name="ScaleFactor">1</float>
+      <int64 name="SourceAssetId">3924238625</int64>
+      <BinaryString name="Tags">Wm9tYmllRnJpZW5kAFNvbGRpZXJFbmVteQ==</BinaryString>
+      <OptionalCoordinateFrame name="WorldPivotData">
+        <CFrame>
+          <X>-5.057949</X>
+          <Y>295.2624</Y>
+          <Z>14.318504</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CFrame>
+      </OptionalCoordinateFrame>
+    </Properties>
+    <Item class="MeshPart" referent="1">
+      <Properties>
+        <string name="Name">HumanoidRootPart</string>
+        <SharedString name="AeroMeshData">rxNJufX5oaagQE3qNtzJSQ==</SharedString>
+        <bool name="Anchored">false</bool>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <float name="BackParamA">-0.5</float>
+        <float name="BackParamB">0.5</float>
+        <token name="BackSurface">0</token>
+        <token name="BackSurfaceInput">0</token>
+        <float name="BottomParamA">-0.5</float>
+        <float name="BottomParamB">0.5</float>
+        <token name="BottomSurface">0</token>
+        <token name="BottomSurfaceInput">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>-5.057949</X>
+          <Y>295.24417</Y>
+          <Z>14.318504</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <bool name="CanCollide">true</bool>
+        <bool name="CanQuery">true</bool>
+        <bool name="CanTouch">true</bool>
+        <bool name="CastShadow">true</bool>
+        <string name="CollisionGroup">Default</string>
+        <int name="CollisionGroupId">0</int>
+        <Color3uint8 name="Color3uint8">16316664</Color3uint8>
+        <PhysicalProperties name="CustomPhysicalProperties">
+          <CustomPhysics>false</CustomPhysics>
+        </PhysicalProperties>
+        <bool name="DefinesCapabilities">false</bool>
+        <bool name="DoubleSided">false</bool>
+        <bool name="EnableFluidForces">true</bool>
+        <float name="FrontParamA">-0.5</float>
+        <float name="FrontParamB">0.5</float>
+        <token name="FrontSurface">0</token>
+        <token name="FrontSurfaceInput">0</token>
+        <bool name="HasJointOffset">false</bool>
+        <bool name="HasSkinnedMesh">false</bool>
+        <Vector3 name="InitialSize">
+          <X>4.884102</X>
+          <Y>6.389698</Y>
+          <Z>3.1370087</Z>
+        </Vector3>
+        <Vector3 name="JointOffset">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Vector3>
+        <float name="LeftParamA">-0.5</float>
+        <float name="LeftParamB">0.5</float>
+        <token name="LeftSurface">0</token>
+        <token name="LeftSurfaceInput">0</token>
+        <bool name="Locked">false</bool>
+        <bool name="Massless">false</bool>
+        <token name="Material">256</token>
+        <string name="MaterialVariantSerialized"></string>
+        <Content name="MeshId">
+          <url>rbxassetid://6802296080</url>
+        </Content>
+        <SharedString name="PhysicalConfigData">/CRaQHNfzN9bozH79EeBVQ==</SharedString>
+        <BinaryString name="PhysicsData">
+        </BinaryString>
+        <CoordinateFrame name="PivotOffset">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <float name="Reflectance">0</float>
+        <token name="RenderFidelity">1</token>
+        <float name="RightParamA">-0.5</float>
+        <float name="RightParamB">0.5</float>
+        <token name="RightSurface">0</token>
+        <token name="RightSurfaceInput">0</token>
+        <int name="RootPriority">0</int>
+        <Vector3 name="RotVelocity">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Vector3>
+        <Vector3 name="size">
+          <X>4.884102</X>
+          <Y>6.389698</Y>
+          <Z>3.1370087</Z>
+        </Vector3>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <Content name="TextureID">
+          <url>rbxassetid://6802321791</url>
+        </Content>
+        <float name="TopParamA">-0.5</float>
+        <float name="TopParamB">0.5</float>
+        <token name="TopSurface">0</token>
+        <token name="TopSurfaceInput">0</token>
+        <float name="Transparency">1</float>
+        <Vector3 name="Velocity">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Vector3>
+        <int name="VertexCount">0</int>
+      </Properties>
+      <Item class="VectorForce" referent="2">
+        <Properties>
+          <string name="Name">VectorForce</string>
+          <bool name="ApplyAtCenterOfMass">true</bool>
+          <Ref name="Attachment0">3</Ref>
+          <Ref name="Attachment1">null</Ref>
+          <BinaryString name="AttributesSerialize"></BinaryString>
+          <int name="Color">23</int>
+          <bool name="DefinesCapabilities">false</bool>
+          <bool name="Enabled">true</bool>
+          <Vector3 name="Force">
+            <X>0</X>
+            <Y>8750</Y>
+            <Z>0</Z>
+          </Vector3>
+          <token name="RelativeTo">2</token>
+          <int64 name="SourceAssetId">-1</int64>
+          <BinaryString name="Tags"></BinaryString>
+          <bool name="Visible">false</bool>
+        </Properties>
+      </Item>
+      <Item class="Attachment" referent="3">
+        <Properties>
+          <string name="Name">Attachment</string>
+          <BinaryString name="AttributesSerialize"></BinaryString>
+          <CoordinateFrame name="CFrame">
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+            <R00>1</R00>
+            <R01>0</R01>
+            <R02>0</R02>
+            <R10>0</R10>
+            <R11>1</R11>
+            <R12>0</R12>
+            <R20>0</R20>
+            <R21>0</R21>
+            <R22>1</R22>
+          </CoordinateFrame>
+          <bool name="DefinesCapabilities">false</bool>
+          <int64 name="SourceAssetId">-1</int64>
+          <BinaryString name="Tags"></BinaryString>
+          <bool name="Visible">false</bool>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="4">
+      <Properties>
+        <string name="Name">Head</string>
+        <bool name="Anchored">false</bool>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <float name="BackParamA">-0.5</float>
+        <float name="BackParamB">0.5</float>
+        <token name="BackSurface">0</token>
+        <token name="BackSurfaceInput">0</token>
+        <float name="BottomParamA">-0.5</float>
+        <float name="BottomParamB">0.5</float>
+        <token name="BottomSurface">0</token>
+        <token name="BottomSurfaceInput">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>-4.982441</X>
+          <Y>297.9755</Y>
+          <Z>14.42855</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <bool name="CanCollide">true</bool>
+        <bool name="CanQuery">true</bool>
+        <bool name="CanTouch">true</bool>
+        <bool name="CastShadow">true</bool>
+        <string name="CollisionGroup">Default</string>
+        <int name="CollisionGroupId">0</int>
+        <Color3uint8 name="Color3uint8">10724005</Color3uint8>
+        <PhysicalProperties name="CustomPhysicalProperties">
+          <CustomPhysics>false</CustomPhysics>
+        </PhysicalProperties>
+        <bool name="DefinesCapabilities">false</bool>
+        <bool name="EnableFluidForces">true</bool>
+        <token name="formFactorRaw">1</token>
+        <float name="FrontParamA">-0.5</float>
+        <float name="FrontParamB">0.5</float>
+        <token name="FrontSurface">0</token>
+        <token name="FrontSurfaceInput">0</token>
+        <float name="LeftParamA">-0.5</float>
+        <float name="LeftParamB">0.5</float>
+        <token name="LeftSurface">0</token>
+        <token name="LeftSurfaceInput">0</token>
+        <bool name="Locked">false</bool>
+        <bool name="Massless">false</bool>
+        <token name="Material">256</token>
+        <string name="MaterialVariantSerialized"></string>
+        <CoordinateFrame name="PivotOffset">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <float name="Reflectance">0</float>
+        <float name="RightParamA">-0.5</float>
+        <float name="RightParamB">0.5</float>
+        <token name="RightSurface">0</token>
+        <token name="RightSurfaceInput">0</token>
+        <int name="RootPriority">0</int>
+        <Vector3 name="RotVelocity">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Vector3>
+        <token name="shape">1</token>
+        <Vector3 name="size">
+          <X>2.3</X>
+          <Y>1</Y>
+          <Z>2</Z>
+        </Vector3>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <float name="TopParamA">-0.5</float>
+        <float name="TopParamB">0.5</float>
+        <token name="TopSurface">0</token>
+        <token name="TopSurfaceInput">0</token>
+        <float name="Transparency">1</float>
+        <Vector3 name="Velocity">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Vector3>
+      </Properties>
+      <Item class="WeldConstraint" referent="5">
+        <Properties>
+          <string name="Name">WeldConstraint</string>
+          <BinaryString name="AttributesSerialize"></BinaryString>
+          <CoordinateFrame name="CFrame0">
+            <X>-0.07550812</X>
+            <Y>-2.7313232</Y>
+            <Z>-0.11004639</Z>
+            <R00>1</R00>
+            <R01>0</R01>
+            <R02>0</R02>
+            <R10>0</R10>
+            <R11>1</R11>
+            <R12>0</R12>
+            <R20>0</R20>
+            <R21>0</R21>
+            <R22>1</R22>
+          </CoordinateFrame>
+          <bool name="DefinesCapabilities">false</bool>
+          <Ref name="Part0Internal">4</Ref>
+          <Ref name="Part1Internal">1</Ref>
+          <int64 name="SourceAssetId">-1</int64>
+          <int name="State">3</int>
+          <BinaryString name="Tags"></BinaryString>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Humanoid" referent="6">
+      <Properties>
+        <string name="Name">Humanoid</string>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <bool name="AutoJumpEnabled">true</bool>
+        <bool name="AutoRotate">true</bool>
+        <bool name="AutomaticScalingEnabled">true</bool>
+        <bool name="BreakJointsOnDeath">true</bool>
+        <token name="CollisionType">0</token>
+        <bool name="DefinesCapabilities">false</bool>
+        <token name="DisplayDistanceType">2</token>
+        <string name="DisplayName"></string>
+        <bool name="EvaluateStateMachine">true</bool>
+        <float name="HealthDisplayDistance">100</float>
+        <token name="HealthDisplayType">0</token>
+        <float name="Health_XML">100</float>
+        <float name="HipHeight">0</float>
+        <Vector3 name="InternalBodyScale">
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
+        </Vector3>
+        <float name="InternalHeadScale">1</float>
+        <float name="JumpHeight">7.2</float>
+        <float name="JumpPower">50</float>
+        <float name="MaxHealth">100</float>
+        <float name="MaxSlopeAngle">89</float>
+        <float name="NameDisplayDistance">0</float>
+        <token name="NameOcclusion">0</token>
+        <bool name="RequiresNeck">true</bool>
+        <token name="RigType">0</token>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <bool name="UseJumpPower">true</bool>
+        <float name="WalkSpeed">14</float>
+      </Properties>
+    </Item>
+    <Item class="MeshPart" referent="7">
+      <Properties>
+        <string name="Name">Body</string>
+        <SharedString name="AeroMeshData">rxNJufX5oaagQE3qNtzJSQ==</SharedString>
+        <bool name="Anchored">false</bool>
+        <BinaryString name="AttributesSerialize"></BinaryString>
+        <float name="BackParamA">-0.5</float>
+        <float name="BackParamB">0.5</float>
+        <token name="BackSurface">0</token>
+        <token name="BackSurfaceInput">0</token>
+        <float name="BottomParamA">-0.5</float>
+        <float name="BottomParamB">0.5</float>
+        <token name="BottomSurface">0</token>
+        <token name="BottomSurfaceInput">0</token>
+        <CoordinateFrame name="CFrame">
+          <X>-5.057949</X>
+          <Y>295.24417</Y>
+          <Z>14.318504</Z>
+          <R00>-1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>-1</R22>
+        </CoordinateFrame>
+        <bool name="CanCollide">true</bool>
+        <bool name="CanQuery">true</bool>
+        <bool name="CanTouch">true</bool>
+        <bool name="CastShadow">true</bool>
+        <string name="CollisionGroup">Default</string>
+        <int name="CollisionGroupId">0</int>
+        <Color3uint8 name="Color3uint8">16316664</Color3uint8>
+        <PhysicalProperties name="CustomPhysicalProperties">
+          <CustomPhysics>false</CustomPhysics>
+        </PhysicalProperties>
+        <bool name="DefinesCapabilities">false</bool>
+        <bool name="DoubleSided">false</bool>
+        <bool name="EnableFluidForces">true</bool>
+        <float name="FrontParamA">-0.5</float>
+        <float name="FrontParamB">0.5</float>
+        <token name="FrontSurface">0</token>
+        <token name="FrontSurfaceInput">0</token>
+        <bool name="HasJointOffset">false</bool>
+        <bool name="HasSkinnedMesh">false</bool>
+        <Vector3 name="InitialSize">
+          <X>4.884102</X>
+          <Y>6.389698</Y>
+          <Z>3.1370087</Z>
+        </Vector3>
+        <Vector3 name="JointOffset">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Vector3>
+        <float name="LeftParamA">-0.5</float>
+        <float name="LeftParamB">0.5</float>
+        <token name="LeftSurface">0</token>
+        <token name="LeftSurfaceInput">0</token>
+        <bool name="Locked">false</bool>
+        <bool name="Massless">false</bool>
+        <token name="Material">256</token>
+        <string name="MaterialVariantSerialized"></string>
+        <Content name="MeshId">
+          <url>rbxassetid://6802296080</url>
+        </Content>
+        <SharedString name="PhysicalConfigData">/CRaQHNfzN9bozH79EeBVQ==</SharedString>
+        <BinaryString name="PhysicsData">
+        </BinaryString>
+        <CoordinateFrame name="PivotOffset">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <R00>1</R00>
+          <R01>0</R01>
+          <R02>0</R02>
+          <R10>0</R10>
+          <R11>1</R11>
+          <R12>0</R12>
+          <R20>0</R20>
+          <R21>0</R21>
+          <R22>1</R22>
+        </CoordinateFrame>
+        <float name="Reflectance">0</float>
+        <token name="RenderFidelity">1</token>
+        <float name="RightParamA">-0.5</float>
+        <float name="RightParamB">0.5</float>
+        <token name="RightSurface">0</token>
+        <token name="RightSurfaceInput">0</token>
+        <int name="RootPriority">0</int>
+        <Vector3 name="RotVelocity">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Vector3>
+        <Vector3 name="size">
+          <X>4.884102</X>
+          <Y>6.389698</Y>
+          <Z>3.1370087</Z>
+        </Vector3>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags"></BinaryString>
+        <Content name="TextureID">
+          <url>rbxassetid://6802321791</url>
+        </Content>
+        <float name="TopParamA">-0.5</float>
+        <float name="TopParamB">0.5</float>
+        <token name="TopSurface">0</token>
+        <token name="TopSurfaceInput">0</token>
+        <float name="Transparency">0</float>
+        <Vector3 name="Velocity">
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Vector3>
+        <int name="VertexCount">0</int>
+      </Properties>
+      <Item class="WeldConstraint" referent="8">
+        <Properties>
+          <string name="Name">WeldConstraint</string>
+          <BinaryString name="AttributesSerialize"></BinaryString>
+          <CoordinateFrame name="CFrame0">
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+            <R00>-1</R00>
+            <R01>0</R01>
+            <R02>0</R02>
+            <R10>0</R10>
+            <R11>1</R11>
+            <R12>0</R12>
+            <R20>0</R20>
+            <R21>0</R21>
+            <R22>-1</R22>
+          </CoordinateFrame>
+          <bool name="DefinesCapabilities">false</bool>
+          <Ref name="Part0Internal">7</Ref>
+          <Ref name="Part1Internal">1</Ref>
+          <int64 name="SourceAssetId">-1</int64>
+          <int name="State">3</int>
+          <BinaryString name="Tags"></BinaryString>
+        </Properties>
+      </Item>
+      <Item class="Attachment" referent="9">
+        <Properties>
+          <string name="Name">Attachment</string>
+          <BinaryString name="AttributesSerialize"></BinaryString>
+          <CoordinateFrame name="CFrame">
+            <X>0</X>
+            <Y>-1</Y>
+            <Z>0</Z>
+            <R00>1</R00>
+            <R01>0</R01>
+            <R02>0</R02>
+            <R10>0</R10>
+            <R11>1</R11>
+            <R12>0</R12>
+            <R20>0</R20>
+            <R21>0</R21>
+            <R22>1</R22>
+          </CoordinateFrame>
+          <bool name="DefinesCapabilities">false</bool>
+          <int64 name="SourceAssetId">-1</int64>
+          <BinaryString name="Tags"></BinaryString>
+          <bool name="Visible">false</bool>
+        </Properties>
+        <Item class="ParticleEmitter" referent="10">
+          <Properties>
+            <string name="Name">ParticleEmitter</string>
+            <Vector3 name="Acceleration">
+              <X>0</X>
+              <Y>0</Y>
+              <Z>0</Z>
+            </Vector3>
+            <BinaryString name="AttributesSerialize"></BinaryString>
+            <float name="Brightness">1</float>
+            <ColorSequence name="Color">0 0.69411767 0.49019608 1 0 1 0.69411767 0.49019608 1 0 </ColorSequence>
+            <bool name="DefinesCapabilities">false</bool>
+            <float name="Drag">0</float>
+            <token name="EmissionDirection">4</token>
+            <bool name="Enabled">true</bool>
+            <NumberRange name="FlipbookFramerate">1 1 </NumberRange>
+            <string name="FlipbookIncompatible">Particle texture must be 1024 by 1024 to use flipbooks.</string>
+            <token name="FlipbookLayout">0</token>
+            <token name="FlipbookMode">0</token>
+            <bool name="FlipbookStartRandom">false</bool>
+            <NumberRange name="Lifetime">1 10 </NumberRange>
+            <float name="LightEmission">0.95</float>
+            <float name="LightInfluence">0.25</float>
+            <bool name="LockedToPart">false</bool>
+            <token name="Orientation">0</token>
+            <float name="Rate">2</float>
+            <NumberRange name="RotSpeed">-20 50 </NumberRange>
+            <NumberRange name="Rotation">-180 180 </NumberRange>
+            <token name="Shape">0</token>
+            <token name="ShapeInOut">0</token>
+            <float name="ShapePartial">1</float>
+            <token name="ShapeStyle">0</token>
+            <NumberSequence name="Size">0 1.2568307 0 0.2881745 1.0928965 0 1 0 0 </NumberSequence>
+            <int64 name="SourceAssetId">-1</int64>
+            <NumberRange name="Speed">0.25 1 </NumberRange>
+            <Vector2 name="SpreadAngle">
+              <X>5</X>
+              <Y>90</Y>
+            </Vector2>
+            <NumberSequence name="Squash">0 0 0 1 0 0 </NumberSequence>
+            <BinaryString name="Tags"></BinaryString>
+            <Content name="Texture">
+              <url>rbxasset://textures/particles/sparkles_main.dds</url>
+            </Content>
+            <float name="TimeScale">1</float>
+            <NumberSequence name="Transparency">0 0 0 1 0.325 0 </NumberSequence>
+            <float name="VelocityInheritance">0</float>
+            <bool name="WindAffectsDrag">false</bool>
+            <float name="ZOffset">0</float>
+          </Properties>
+        </Item>
+      </Item>
+    </Item>
+  </Item>
+  <SharedStrings>
+    <SharedString md5="rxNJufX5oaagQE3qNtzJSQ=="></SharedString>
+    <SharedString md5="/CRaQHNfzN9bozH79EeBVQ==">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</SharedString>
+  </SharedStrings>
+</roblox>

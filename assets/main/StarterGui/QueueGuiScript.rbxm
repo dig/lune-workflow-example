@@ -1,0 +1,40 @@
+<roblox version="4">
+  <Item class="LocalScript" referent="0">
+    <Properties>
+      <string name="Name">QueueGuiScript</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="Disabled">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <token name="RunContext">0</token>
+      <string name="Source">local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local events = ReplicatedStorage:WaitForChild("Events")
+local rideQueueUpdate = events:WaitForChild("RideQueueUpdate")
+
+local gameStateScreens = script.Parent:WaitForChild("GameStateScreens")
+local queueGui = gameStateScreens:WaitForChild("QueueGUI")
+local queueText = queueGui:WaitForChild("Header")
+
+local function onUpdate(state)
+	if state == "IN_QUEUE" then
+		queueGui.Visible = true
+		queueText.Text = "Joining ride"
+	elseif state == "RIDE_STARTING" then
+		queueGui.Visible = true
+		queueText.Text = "Waiting for riders"
+	elseif state == "RIDE_STARTED" then
+		queueGui.Visible = false
+	else
+		warn("Unknown ride queue state")
+	end
+end
+
+rideQueueUpdate.OnClientEvent:Connect(onUpdate)</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

@@ -1,0 +1,72 @@
+<roblox version="4">
+  <Item class="Script" referent="0">
+    <Properties>
+      <string name="Name">ParticleSwitcher</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="Disabled">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <token name="RunContext">0</token>
+      <string name="Source">-- Adds particles to the WeaponsSystem based off player creations (or uses a default if not present)
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerStorage = game:GetService("ServerStorage")
+
+local blaster = ServerStorage:WaitForChild("Weapons"):WaitForChild("Blaster")
+local WeaponSystem = blaster:WaitForChild("WeaponsSystem")
+local RocketAsset = WeaponSystem.Assets.Effects.Shots.Rocket
+
+-- Names for particle effects
+local EXPLODE_NAME = "ExplosionParticles"
+local SHOT_NAME = "BlastParticles"
+
+local BACKUP_EXPLODE = ReplicatedStorage.ParticleTemplates:WaitForChild("ExplodeStarter")
+local BACKUP_SHOT = ReplicatedStorage.ParticleTemplates:WaitForChild("MagicBlastStarter")
+
+local function getExplodeParticle()
+	local particle = game.Workspace.ExplosionHolder:FindFirstChild(EXPLODE_NAME)
+
+	if not particle then
+		warn("No particle detected for the explosion. Using backup.")
+		particle = ReplicatedStorage.ParticleTemplates:WaitForChild("ExplodeStarter")
+	end
+
+	return particle
+end
+
+local function getShotParticle()
+	local particle = game.Workspace.MagicBlast:FindFirstChild(SHOT_NAME)
+
+	if not particle then
+		warn("No particle detected for the shot. Using backup.")
+		particle = BACKUP_SHOT
+	end
+
+	return particle
+end
+
+local function setupParticles()
+	-- Get the particles to modify
+	local explodeParticle = getExplodeParticle()
+	local shotParticle = getShotParticle()
+
+	-- Clone the particles in the correct area and rename them as needed
+	local shot = shotParticle:Clone()
+	local explode = explodeParticle:Clone()
+
+	shot.Name = "LeadingParticles"
+	shot.Parent = RocketAsset:WaitForChild("Attachment1")
+
+	explode.Name = "HitParticles"
+	explode.Parent = RocketAsset:WaitForChild("HitEffect")
+end
+
+setupParticles()</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

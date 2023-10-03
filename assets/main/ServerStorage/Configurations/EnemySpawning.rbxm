@@ -1,0 +1,36 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">EnemySpawning</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">-- Determines which spawners will actively spawn enemies based off the waypoint (attachments in Workspace.TrackParts), the cart is currently at
+local EnemySpawning = {}
+
+local waypoints = {}
+
+waypoints[1] = { "Spawner1", "Spawner2", "Spawner6", "Spawner7" }
+waypoints[2] = { "Spawner2", "Spawner3", "Spawner4", "Spawner5" }
+waypoints[3] = { "Spawner2", "Spawner5", "Spawner6", "Spawner7" }
+waypoints[4] = { "Spawner2", "Spawner3", "Spawner5", "Spawner6", "Spawner7" }
+waypoints[5] = {}
+waypoints[6] = { "Spawner8", "Spawner9", "Spawner12", "Spawner17" }
+waypoints[7] = { "Spawner10", "Spawner11", "Spawner12", "Spawner17" }
+waypoints[8] = { "Spawner10", "Spawner11", "Spawner13", "Spawner14" } 
+waypoints[9] = { "Spawner8", "Spawner10", "Spawner12", "Spawner14" } 
+waypoints[10] = { "Spawner8", "Spawner9", "Spawner11", "Spawner14" } 
+waypoints[11] = { "Spawner15", "Spawner16", "Spawner18", "Spawner13"}
+waypoints[12] = { "Spawner15", "Spawner16", "Spawner19", "Spawner20" } 
+
+EnemySpawning.waypoints = waypoints
+
+return EnemySpawning</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

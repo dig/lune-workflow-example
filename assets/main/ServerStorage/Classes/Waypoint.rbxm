@@ -1,0 +1,31 @@
+<roblox version="4">
+  <Item class="ModuleScript" referent="0">
+    <Properties>
+      <string name="Name">Waypoint</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <string name="Source">local ServerStorage = game:GetService("ServerStorage")
+local TrackNode = require(ServerStorage.Classes.TrackNode)
+
+local Waypoint = {}
+Waypoint.__index = Waypoint
+setmetatable(Waypoint, TrackNode)
+
+function Waypoint.new(attachment)
+	local self = setmetatable(TrackNode.new(attachment), Waypoint)
+	
+	self.type = "Waypoint"
+	
+	return self
+end
+
+return Waypoint</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>

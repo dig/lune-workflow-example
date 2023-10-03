@@ -1,0 +1,25 @@
+<roblox version="4">
+  <Item class="Script" referent="0">
+    <Properties>
+      <string name="Name">HideGameComponents</string>
+      <BinaryString name="AttributesSerialize"></BinaryString>
+      <bool name="DefinesCapabilities">false</bool>
+      <bool name="Disabled">false</bool>
+      <Content name="LinkedSource">
+        <null>
+        </null>
+      </Content>
+      <token name="RunContext">0</token>
+      <string name="Source">-- Makes objects like the track and enemy spawners invisible on setup
+for _, part in ipairs(game.Workspace.EnemySpawners:GetChildren()) do
+	part.Transparency = 1
+end
+
+for _, part in ipairs(game.Workspace.TrackParts:GetChildren()) do
+	part.Transparency = 1
+end</string>
+      <int64 name="SourceAssetId">-1</int64>
+      <BinaryString name="Tags"></BinaryString>
+    </Properties>
+  </Item>
+</roblox>
