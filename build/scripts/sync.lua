@@ -117,7 +117,7 @@ end
 print("#########################################################")
 
 print("Serializing place [2/3]")
-local placeFile = roblox.serializePlace(newGame)
+local placeFile = roblox.serializePlace(newGame, true)
 local gameBuildTempPath = `gameBuild.rbxl`
 fs.writeFile(gameBuildTempPath, placeFile)
 placeFile = fs.readFile(gameBuildTempPath)
