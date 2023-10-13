@@ -33,7 +33,7 @@
       <BinaryString name="Tags"></BinaryString>
       <OptionalCoordinateFrame name="WorldPivotData">
         <CFrame>
-          <X>276.63776</X>
+          <X>276.63773</X>
           <Y>157.01202</Y>
           <Z>-982.6385</Z>
           <R00>0.5000005</R00>

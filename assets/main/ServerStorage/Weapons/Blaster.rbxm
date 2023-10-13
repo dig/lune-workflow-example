@@ -54,6 +54,20 @@
       </Content>
       <string name="ToolTip"></string>
       <OptionalCoordinateFrame name="WorldPivotData">
+        <CFrame>
+          <X>-19.008991</X>
+          <Y>2.7245545</Y>
+          <Z>-2.3180587</Z>
+          <R00>0.9995947</R00>
+          <R01>-0.028468695</R01>
+          <R02>0</R02>
+          <R10>0.028433174</R10>
+          <R11>0.9983475</R11>
+          <R12>-0.049937807</R12>
+          <R20>0.0014216641</R20>
+          <R21>0.049917568</R21>
+          <R22>0.9987523</R22>
+        </CFrame>
       </OptionalCoordinateFrame>
     </Properties>
     <Item class="Part" referent="1">

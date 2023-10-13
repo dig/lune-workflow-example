@@ -34,7 +34,7 @@
       <OptionalCoordinateFrame name="WorldPivotData">
         <CFrame>
           <X>129.24147</X>
-          <Y>38.471615</Y>
+          <Y>38.471752</Y>
           <Z>319.9065</Z>
           <R00>0.99089885</R00>
           <R01>0</R01>
