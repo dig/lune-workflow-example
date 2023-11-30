@@ -138,6 +138,7 @@
           <bool name="DefinesCapabilities">false</bool>
           <bool name="DoubleSided">false</bool>
           <bool name="EnableFluidForces">true</bool>
+          <token name="FluidFidelityInternal">0</token>
           <float name="FrontParamA">-0.5</float>
           <float name="FrontParamB">0.5</float>
           <token name="FrontSurface">0</token>
@@ -259,6 +260,7 @@
           <bool name="DefinesCapabilities">false</bool>
           <bool name="DoubleSided">false</bool>
           <bool name="EnableFluidForces">true</bool>
+          <token name="FluidFidelityInternal">0</token>
           <float name="FrontParamA">-0.5</float>
           <float name="FrontParamB">0.5</float>
           <token name="FrontSurface">0</token>
@@ -527,6 +529,7 @@
           <bool name="DefinesCapabilities">false</bool>
           <bool name="DoubleSided">false</bool>
           <bool name="EnableFluidForces">true</bool>
+          <token name="FluidFidelityInternal">0</token>
           <float name="FrontParamA">-0.5</float>
           <float name="FrontParamB">0.5</float>
           <token name="FrontSurface">0</token>
@@ -648,6 +651,7 @@
           <bool name="DefinesCapabilities">false</bool>
           <bool name="DoubleSided">false</bool>
           <bool name="EnableFluidForces">true</bool>
+          <token name="FluidFidelityInternal">0</token>
           <float name="FrontParamA">-0.5</float>
           <float name="FrontParamB">0.5</float>
           <token name="FrontSurface">0</token>
@@ -916,6 +920,7 @@
           <bool name="DefinesCapabilities">false</bool>
           <bool name="DoubleSided">false</bool>
           <bool name="EnableFluidForces">true</bool>
+          <token name="FluidFidelityInternal">0</token>
           <float name="FrontParamA">-0.5</float>
           <float name="FrontParamB">0.5</float>
           <token name="FrontSurface">0</token>
@@ -1037,6 +1042,7 @@
           <bool name="DefinesCapabilities">false</bool>
           <bool name="DoubleSided">false</bool>
           <bool name="EnableFluidForces">true</bool>
+          <token name="FluidFidelityInternal">0</token>
           <float name="FrontParamA">-0.5</float>
           <float name="FrontParamB">0.5</float>
           <token name="FrontSurface">0</token>
@@ -1305,6 +1311,7 @@
           <bool name="DefinesCapabilities">false</bool>
           <bool name="DoubleSided">false</bool>
           <bool name="EnableFluidForces">true</bool>
+          <token name="FluidFidelityInternal">0</token>
           <float name="FrontParamA">-0.5</float>
           <float name="FrontParamB">0.5</float>
           <token name="FrontSurface">0</token>
@@ -1426,6 +1433,7 @@
           <bool name="DefinesCapabilities">false</bool>
           <bool name="DoubleSided">false</bool>
           <bool name="EnableFluidForces">true</bool>
+          <token name="FluidFidelityInternal">0</token>
           <float name="FrontParamA">-0.5</float>
           <float name="FrontParamB">0.5</float>
           <token name="FrontSurface">0</token>

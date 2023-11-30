@@ -14,17 +14,17 @@
       <token name="BottomSurface">0</token>
       <token name="BottomSurfaceInput">0</token>
       <CoordinateFrame name="CFrame">
-        <X>194.98235</X>
-        <Y>33.26576</Y>
-        <Z>401.53983</Z>
-        <R00>0.9893265</R00>
-        <R01>0.14564425</R01>
-        <R02>-0.0045309067</R02>
-        <R10>-0.14571482</R10>
-        <R11>0.9888482</R11>
-        <R12>-0.030762196</R12>
-        <R20>-0.00000011920929</R20>
-        <R21>0.031094015</R21>
+        <X>170.09949</X>
+        <Y>35.20733</Y>
+        <Z>456.34543</Z>
+        <R00>0.9893267</R00>
+        <R01>0.14564438</R01>
+        <R02>-0.004530742</R02>
+        <R10>-0.14571485</R10>
+        <R11>0.9888483</R11>
+        <R12>-0.030762156</R12>
+        <R20>0</R20>
+        <R21>0.031094018</R21>
         <R22>0.9995165</R22>
       </CoordinateFrame>
       <bool name="CanCollide">true</bool>
@@ -40,6 +40,7 @@
       <bool name="DefinesCapabilities">false</bool>
       <bool name="DoubleSided">false</bool>
       <bool name="EnableFluidForces">true</bool>
+      <token name="FluidFidelityInternal">0</token>
       <float name="FrontParamA">-0.5</float>
       <float name="FrontParamB">0.5</float>
       <token name="FrontSurface">0</token>

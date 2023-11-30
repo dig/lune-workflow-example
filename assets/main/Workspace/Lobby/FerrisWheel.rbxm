@@ -4626,6 +4626,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>
@@ -6598,6 +6599,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>
@@ -7603,6 +7605,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>
@@ -9459,6 +9462,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>
@@ -11315,6 +11319,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>
@@ -13171,6 +13176,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>
@@ -15027,6 +15033,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>
@@ -16883,6 +16890,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>
@@ -18739,6 +18747,7 @@
             <float name="Radius">0.15</float>
             <float name="Restitution">0</float>
             <float name="ServoMaxTorque">0</float>
+            <bool name="SoftlockServoUponReachingTarget">false</bool>
             <int64 name="SourceAssetId">-1</int64>
             <BinaryString name="Tags"></BinaryString>
             <float name="TargetAngle">0</float>

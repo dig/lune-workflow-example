@@ -94,6 +94,7 @@
         </PhysicalProperties>
         <bool name="DefinesCapabilities">false</bool>
         <bool name="EnableFluidForces">true</bool>
+        <token name="FluidFidelityInternal">0</token>
         <token name="FormFactor">3</token>
         <float name="FrontParamA">-0.5</float>
         <float name="FrontParamB">0.5</float>
@@ -211,6 +212,7 @@
         </PhysicalProperties>
         <bool name="DefinesCapabilities">false</bool>
         <bool name="EnableFluidForces">true</bool>
+        <token name="FluidFidelityInternal">0</token>
         <token name="FormFactor">3</token>
         <float name="FrontParamA">-0.5</float>
         <float name="FrontParamB">0.5</float>

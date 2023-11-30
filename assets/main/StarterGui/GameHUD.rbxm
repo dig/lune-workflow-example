@@ -158,6 +158,10 @@
           <bool name="Interactable">true</bool>
           <int name="LayoutOrder">0</int>
           <float name="LineHeight">1</float>
+          <BinaryString name="LocalizationMatchIdentifier">
+          </BinaryString>
+          <BinaryString name="LocalizationMatchedSourceText">
+          </BinaryString>
           <int name="MaxVisibleGraphemes">-1</int>
           <Ref name="NextSelectionDown">null</Ref>
           <Ref name="NextSelectionLeft">null</Ref>

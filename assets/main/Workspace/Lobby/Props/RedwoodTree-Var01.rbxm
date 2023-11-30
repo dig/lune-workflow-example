@@ -33,9 +33,9 @@
       <BinaryString name="Tags">X0JydXNodG9vbEJydXNoZWQ=</BinaryString>
       <OptionalCoordinateFrame name="WorldPivotData">
         <CFrame>
-          <X>266.5072</X>
-          <Y>33.144035</Y>
-          <Z>318.41443</Z>
+          <X>266.19107</X>
+          <Y>98.875374</Y>
+          <Z>322.47064</Z>
           <R00>0</R00>
           <R01>-0.024334528</R01>
           <R02>-0.99970406</R02>
@@ -89,6 +89,7 @@
         <bool name="DefinesCapabilities">false</bool>
         <bool name="DoubleSided">true</bool>
         <bool name="EnableFluidForces">true</bool>
+        <token name="FluidFidelityInternal">0</token>
         <float name="FrontParamA">-0.5</float>
         <float name="FrontParamB">0.5</float>
         <token name="FrontSurface">0</token>
@@ -235,6 +236,7 @@
         <bool name="DefinesCapabilities">false</bool>
         <bool name="DoubleSided">false</bool>
         <bool name="EnableFluidForces">true</bool>
+        <token name="FluidFidelityInternal">0</token>
         <float name="FrontParamA">-0.5</float>
         <float name="FrontParamB">0.5</float>
         <token name="FrontSurface">0</token>
@@ -381,6 +383,7 @@
         <bool name="DefinesCapabilities">false</bool>
         <bool name="DoubleSided">false</bool>
         <bool name="EnableFluidForces">true</bool>
+        <token name="FluidFidelityInternal">0</token>
         <float name="FrontParamA">-0.5</float>
         <float name="FrontParamB">0.5</float>
         <token name="FrontSurface">0</token>
